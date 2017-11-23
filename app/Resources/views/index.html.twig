@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Index action</title>
+</head>
+<body>
+<p>{{ 'Hello world' }}</p>
+
+<a href="{{ loginUrl }}">Setup bot</a>
+
+<form action="{{ path('subscribe') }}" method="POST">
+    <select name="page" single>
+        {% for key, value in pages %}
+        <option value="{{ value['id'] }}">{{ value['name'] }}</option>
+        {% endfor %}
+    </select>
+    <input type="submit" name="submit">
+</form>
+</body>
+</html>

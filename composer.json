@@ -1,0 +1,28 @@
+{
+    "require": {
+        "php": ">=7.1",
+        "symfony/symfony": "^3.3",
+        "sensio/framework-extra-bundle": "^3.0",
+        "doctrine/orm": "^2.5",
+        "doctrine/doctrine-bundle": "^1.6",
+        "symfony/browser-kit": "^3.3",
+        "symfony/dom-crawler": "^3.3",
+        "botman/driver-facebook": "^1.2",
+        "facebook/graph-sdk": "^5.6",
+        "facebook/php-ads-sdk": "2.10.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "": "src/"
+        }
+    },
+    "config": {
+        "platform": {
+            "php": "7.1.9"
+        },
+        "bin-dir": "bin"
+    },
+    "extra": {
+        "symfony-bin-dir": "bin"
+    }
+}

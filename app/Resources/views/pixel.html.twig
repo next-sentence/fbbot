@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pixel action</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+    <!-- Facebook Pixel Code -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '139013076741247');
+        fbq('track', 'PageView');
+        fbq('track', 'ViewContent', {
+            contents: {'id': '1523501507742883' },
+            content_name: 'Dog Bowl In Blue',
+            content_type: 'product',
+            content_ids: ['DB_1'],
+//            product_catalog_id: '1330420370416996',
+            value: 9.99,
+            currency: 'GBP'
+        });
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+                   src="https://www.facebook.com/tr?id=139013076741247&ev=PageView&noscript=1"
+        /></noscript>
+    <!-- End Facebook Pixel Code -->
+
+</head>
+<script>
+//    fbq('track', 'ViewContent', {
+//        contents: {'id': 'DB_1' },
+//        content_type: 'product',
+//        content_ids: 'DB_1',
+//        product_catalog_id: '1330420370416996',
+//        content_category: 'Entertainment',
+//        value: 1.50,
+//        currency: 'USD',
+//        referrer: document.referrer,
+//        userAgent: navigator.userAgent,
+//        language: navigator.language
+//    });
+</script>
+<body>
+
+<button id="addToCartButton">Add to cart</button>
+<button id="purchaseButton">Purchase</button>
+<script type="text/javascript">
+    $('#addToCartButton').click(function() {
+        console.log('cart');
+        fbq('track', 'AddToCart', {
+            contents: {'id': 'DB_1' },
+            content_name: 'Dog Bowl In Blue',
+            content_type: 'product',
+            content_ids: ['DB_1'],
+//            product_catalog_id: '1330420370416996',
+            value: 9.99,
+            currency: 'GBP'
+        });
+    });
+    $('#purchaseButton').click(function() {
+        console.log('purchase');
+        fbq('track', 'Purchase', {
+            contents: {'id': 'DB_1' },
+            content_name: 'Dog Bowl In Blue',
+            content_type: 'product',
+            content_ids: ['DB_1'],
+            value: 9.99,
+            currency: 'GBP',
+            num_items: 1
+        });
+    });
+</script>
+
+</body>
+</html>

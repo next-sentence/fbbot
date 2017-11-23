@@ -1,0 +1,25 @@
+curl \
+  -F 'name=Test Catalog' \
+  -F 'access_token=EAAEHSjditZCkBAORsezdutWcyGTxO8Kv3xygKa1HXaVBUu2fphIZC6TEwmMYnFE7fuA8HwXFhZBMKUp8uesgDDhAkm7kJoE8FgrSmTvfiiROsZCcXNNPbSisppxsEQWR9ZCkWOdSZAs93byid8ZCUnRUZCQUZB02m8aC9vP20ASK0pO6fUwc7SUcq' \
+  -F 'appsecret_proof=2a8c0cbd19a05affc2bd55d11f7f1576e897d0d28346deeeb819631f90c94d43' \
+  https://graph.facebook.com/v2.10/355160638243382/product_catalogs
+
+curl \
+  -F 'name=Test Feed' \
+  -F 'schedule={"interval":"DAILY","url":"https:\/\/origincache.facebook.com\/developers\/resources\/?id=dpa_product_catalog_sample_feed.csv","hour":"22"}' \
+  -F 'access_token=EAAEHSjditZCkBAORsezdutWcyGTxO8Kv3xygKa1HXaVBUu2fphIZC6TEwmMYnFE7fuA8HwXFhZBMKUp8uesgDDhAkm7kJoE8FgrSmTvfiiROsZCcXNNPbSisppxsEQWR9ZCkWOdSZAs93byid8ZCUnRUZCQUZB02m8aC9vP20ASK0pO6fUwc7SUcq' \
+  -F 'appsecret_proof=2a8c0cbd19a05affc2bd55d11f7f1576e897d0d28346deeeb819631f90c94d43' \
+  https://graph.facebook.com/v2.10/158585958067546/product_feeds
+
+curl \
+  -F 'name=All Product' \
+  -F 'access_token=EAAEHSjditZCkBAORsezdutWcyGTxO8Kv3xygKa1HXaVBUu2fphIZC6TEwmMYnFE7fuA8HwXFhZBMKUp8uesgDDhAkm7kJoE8FgrSmTvfiiROsZCcXNNPbSisppxsEQWR9ZCkWOdSZAs93byid8ZCUnRUZCQUZB02m8aC9vP20ASK0pO6fUwc7SUcq' \
+  -F 'appsecret_proof=2a8c0cbd19a05affc2bd55d11f7f1576e897d0d28346deeeb819631f90c94d43' \
+  https://graph.facebook.com/v2.10/158585958067546/product_sets
+
+curl \
+  -F 'external_event_sources=["1929733453907753"]' \
+  -F 'access_token=EAAEHSjditZCkBAORsezdutWcyGTxO8Kv3xygKa1HXaVBUu2fphIZC6TEwmMYnFE7fuA8HwXFhZBMKUp8uesgDDhAkm7kJoE8FgrSmTvfiiROsZCcXNNPbSisppxsEQWR9ZCkWOdSZAs93byid8ZCUnRUZCQUZB02m8aC9vP20ASK0pO6fUwc7SUcq' \
+  -F 'appsecret_proof=2a8c0cbd19a05affc2bd55d11f7f1576e897d0d28346deeeb819631f90c94d43' \
+  https://graph.facebook.com/v2.10/158585958067546/external_event_sources
+

@@ -1,0 +1,34 @@
+imports:
+    - { resource: parameters.yml }
+    - { resource: services.yml }
+
+framework:
+    secret: %app.secret%
+    session:
+        handler_id:  ~
+    templating:
+        engines: ['twig']
+    profiler: { only_exceptions: false }
+
+
+doctrine:
+    dbal:
+        driver: '%app.database_driver%'
+        host: '%app.database_host%'
+        port: '%app.database_port%'
+        dbname: '%app.database_name%'
+        user: '%app.database_user%'
+        password: '%app.database_password%'
+        charset: UTF8
+        path: '%app.database_path%'
+    orm:
+        auto_generate_proxy_classes: %kernel.debug%
+        entity_managers:
+            default:
+                auto_mapping: true
+                mappings:
+                    app:
+                        type: annotation
+                        prefix: App\Entity
+                        dir: "%kernel.root_dir%/../src/App/Entity"
+                        is_bundle: false
