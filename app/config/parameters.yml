@@ -2,7 +2,7 @@
 parameters:
     fb.app_secret: df51cf85740df220273cc817eae65be6
     fb.app_id: 350300872106773
-    app.url: https://b4c10fb5.ngrok.io
+    app.url: https://pbinzari.ngrok.io
     app.secret: APP_SECRET
     app.database_driver: pdo_sqlite
     app.database_host: 127.0.0.1
