@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Checkbox action</title>
+
+    <script>
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId      : '{{ appId }}',
+                xfbml      : true,
+                version    : 'v2.10'
+            });
+
+            FB.Event.subscribe('messenger_checkbox', function(e) {
+                console.log("messenger_checkbox event");
+
+                if (e.event == 'rendered') {
+                    console.log("Plugin was rendered");
+                } else if (e.event == 'checkbox') {
+                    var checkboxState = e.state;
+                    console.log("Checkbox state: " + checkboxState);
+                } else if (e.event == 'not_you') {
+                    console.log("User clicked 'not you'");
+                } else if (e.event == 'hidden') {
+                    console.log("Plugin was hidden");
+                }
+            });
+
+            FB.Event.subscribe('messaging_optins', function(e) {
+                console.log("messaging_optins event");
+                console.log(e);
+            });
+
+            FB.Event.subscribe('send_to_messenger', function(e) {
+                console.log("send_to_messenger event");
+
+            });
+        };
+
+//        (function(d, s, id){
+//                var js, fjs = d.getElementsByTagName(s)[0];
+//                if (d.getElementById(id)) {return;}
+//                js = d.createElement(s); js.id = id;
+//                js.src = "//connect.facebook.net/en_US/sdk.js";
+//                fjs.parentNode.insertBefore(js, fjs);
+//            }(document, 'script', 'facebook-jssdk')
+//        );
+
+        function confirmOptIn() {
+            FB.AppEvents.logEvent('MessengerCheckboxUserConfirmation', null, {
+                'app_id':'{{ appId }}',
+                'page_id':'{{ pageId }}',
+                'user_ref':'{{ uniqueId }}'
+            });
+        }
+    </script>
+
+
+
+</head>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+
+<div class="fb-messenger-checkbox"
+     origin="{{ origin }}"
+     page_id="{{ pageId }}"
+     messenger_app_id="{{ appId }}"
+     user_ref="{{ uniqueId }}"
+     prechecked="true"
+     allow_login="true"
+     size="large">
+</div>
+<body>
+    <input type="button" onclick="confirmOptIn()" value="Confirm Opt-in"/>
+
+
+</body>
+</html>
